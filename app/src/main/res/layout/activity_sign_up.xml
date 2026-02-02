@@ -31,7 +31,7 @@
                 android:layout_width="350dp"
                 android:layout_height="@dimen/dp_150"
                 android:layout_gravity="start"
-                android:src="@drawable/arivulogo1"
+                android:src="@drawable/arivumusiclogo"
                 android:padding="@dimen/dp_20"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

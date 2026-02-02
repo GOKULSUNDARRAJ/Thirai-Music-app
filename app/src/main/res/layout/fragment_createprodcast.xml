@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkGray">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/sp_15"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgblack"
+            android:paddingTop="@dimen/top_layout_padding_vertical"
+            android:paddingRight="@dimen/top_layout_padding_horizontal"
+            android:paddingBottom="@dimen/top_layout_padding_vertical">
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="@dimen/dp_27"
+                android:layout_height="@dimen/dp_27"
+                android:layout_gravity="center"
+                android:src="@drawable/backarrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/applogo"
+                android:layout_width="@dimen/app_logo_size"
+                android:layout_height="@dimen/app_logo_size"
+                android:layout_marginStart="@dimen/app_logo_margin_start"
+                android:layout_marginTop="@dimen/app_logo_margin_vertical"
+                android:layout_marginBottom="@dimen/app_logo_margin_vertical"
+                android:src="@drawable/saalai_logo"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_menu"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/channel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/circularstdmedium"
+                android:text="Create Podcasts"
+                android:textColor="@color/white"
+                android:textSize="@dimen/channel_name_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/searchicon"
+                android:layout_width="@dimen/action_icon_width"
+                android:layout_height="@dimen/action_icon_height"
+                android:layout_marginTop="@dimen/action_icon_margin_vertical"
+                android:layout_marginEnd="@dimen/action_icon_margin_horizontal"
+                android:layout_marginBottom="@dimen/action_icon_margin_vertical"
+                android:padding="@dimen/action_icon_padding"
+                android:src="@drawable/search"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/boardicon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/boardicon"
+                android:layout_width="@dimen/boardcast_icon_size"
+                android:layout_height="@dimen/boardcast_icon_size"
+                android:layout_marginTop="@dimen/boardcast_icon_margin_vertical"
+                android:layout_marginBottom="@dimen/boardcast_icon_margin_vertical"
+                android:padding="@dimen/boardcast_icon_padding"
+                android:src="@drawable/boardcast"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_3">
+
+            <EditText
+                android:id="@+id/editTextPodcastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@android:color/transparent"
+                android:hint="Enter podcast name"
+                android:minHeight="@dimen/dp_50"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="-5dp"
+                android:background="@color/gray1" />
+
+            <!-- Upload Picture Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="8dp"
+                android:text="Upload Picture"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/uploadContainer"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="@dimen/dp_140"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_32"
+                app:cardCornerRadius="@dimen/dp_18"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/imguploadlayout"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/rounded_stroke_background"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewUploadIcon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:src="@drawable/camera"
+                        android:tint="#FF757575"
+                        app:layout_constraintBottom_toTopOf="@+id/textView8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Tap to upload picture"
+                        android:textColor="#FF757575"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/imageViewPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/buttonDeleteImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignTop="@+id/imageViewPreview"
+                    android:layout_alignEnd="@+id/imageViewPreview"
+                    android:layout_margin="8dp"
+                    android:visibility="gone"
+                    android:contentDescription="Delete image"
+                    android:src="@drawable/trash"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Voice Recording UI Container -->
+        <LinearLayout
+            android:id="@+id/recordlayout1"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:background="@drawable/rounded_solid_background"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_10">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/circularstdmedium"
+                    android:text="Voice"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp_17"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/buttonRecord1"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="@drawable/circle_record_button"
+                    android:padding="@dimen/dp_10"
+                    android:src="@drawable/micwhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recordlayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_solid_background"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="20dp"
+          >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="00:00:00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp_15"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/waveformView"
+                    app:layout_constraintTop_toTopOf="@+id/waveformView" />
+
+                <!-- Recording Waveform Placeholder -->
+                <com.Saalai.SalaiMusicApp.Custom.WaveformView
+                    android:id="@+id/waveformView"
+                    android:layout_width="@dimen/dp_200"
+                    android:layout_height="@dimen/dp_40"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewTimer"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Timer Display -->
+
+
+            <!-- Recording Controls -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <!-- Play/Pause Button -->
+
+                <!-- Record Button -->
+                <ImageView
+                    android:id="@+id/buttonPlayPause"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@drawable/circle_button_background"
+                    android:padding="@dimen/dp_10"
+                    android:src="@drawable/playwhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/buttonRecord"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@drawable/circle_record_button"
+                    android:padding="@dimen/dp_10"
+                    android:src="@drawable/micwhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonStop"
+                    app:layout_constraintStart_toEndOf="@+id/buttonPlayPause" />
+
+                <!-- Stop Button -->
+                <ImageView
+                    android:id="@+id/buttonStop"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@drawable/circle_button_background"
+                    android:padding="@dimen/dp_10"
+                    android:src="@drawable/send"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Recording Status -->
+            <TextView
+                android:id="@+id/textViewRecordingStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="Ready to record"
+                android:textColor="#FF757575"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

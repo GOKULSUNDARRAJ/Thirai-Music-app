@@ -33,6 +33,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.Saalai.SalaiMusicApp.Fragments.CreatepodcastFragment;
 import com.Saalai.SalaiMusicApp.Fragments.HomeFragment;
 import com.Saalai.SalaiMusicApp.Fragments.ProfileFragment;
 import com.bumptech.glide.Glide;
@@ -427,7 +428,7 @@ public class MainActivity extends BaseActivity implements
                 fragment = new AudioDownloadFragment();
                 break;
             case "audio":
-                fragment = new ProfileFragment();
+                fragment = new CreatepodcastFragment();
                 break;
             default:
                 // Try to match by ID if name doesn't match
@@ -439,7 +440,7 @@ public class MainActivity extends BaseActivity implements
                         fragment = new AudioDownloadFragment();
                         break;
                     case 3: // Audio
-                        fragment = new ProfileFragment();
+                        fragment = new CreatepodcastFragment();
                         break;
                     default:
                         fragment = new HomeFragment();

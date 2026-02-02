@@ -12,7 +12,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:src="@drawable/boardimg2"
+        android:src="@drawable/onboarding1"
         android:scaleType="fitCenter"/>
 
     <TextView
@@ -31,7 +31,7 @@
         android:id="@+id/textDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/gray1"
+        android:textColor="@color/textplaceholder"
         android:textSize="24sp"
         android:layout_marginBottom="@dimen/dp_30"
         android:text="Save your favorite shows to watch offline"

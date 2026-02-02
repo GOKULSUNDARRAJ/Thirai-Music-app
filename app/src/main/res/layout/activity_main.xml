@@ -86,35 +86,36 @@
             android:layout_above="@id/bottom_nav_recycler_view"
             android:elevation="@dimen/dp_8"
             app:cardCornerRadius="10dp"
-            android:layout_margin="4dp">
+          >
 
             <LinearLayout
                 android:id="@+id/miniaudioplayer"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_64"
                 android:orientation="vertical"
-                android:gravity="center_vertical"
                 android:background="@color/gray"
-                android:padding="@dimen/dp_4">
+               >
 
                 <!-- Horizontal layout: Album + Info + Play/Pause -->
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:layout_marginStart="@dimen/dp_4"
-                    android:layout_marginEnd="@dimen/dp_4"
-                    android:layout_marginTop="@dimen/dp_4">
+                  >
 
                     <!-- Album Art -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
                         android:layout_width="@dimen/dp_42"
                         android:layout_height="@dimen/dp_42"
-                        android:layout_marginEnd="@dimen/dp_8"
-                        app:cardCornerRadius="@dimen/dp_4"
                         android:layout_gravity="center"
+                        android:clipChildren="false"
                         android:clipToPadding="false"
-                        android:clipChildren="false">
+                        android:layout_marginLeft="@dimen/dp_10"
+                        app:cardCornerRadius="@dimen/dp_4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
                             android:id="@+id/imgMiniAlbumArt"
@@ -126,33 +127,38 @@
 
                     <!-- Song Info -->
                     <LinearLayout
+                        android:id="@+id/linearLayout10"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+                        app:layout_constraintStart_toEndOf="@+id/cardView2"
+                        app:layout_constraintTop_toTopOf="@+id/cardView2">
 
                         <TextView
                             android:id="@+id/tvMiniSongName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Song Name"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/sp_16"
                             android:ellipsize="end"
                             android:fontFamily="@font/circularstdmedium"
-                            android:singleLine="true" />
+                            android:singleLine="true"
+                            android:text="Song Name"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/sp_16" />
 
                         <TextView
                             android:id="@+id/tvMiniSongArtist"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/circularstdbook"
+                            android:singleLine="true"
                             android:text="Artist"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/circularstdbook"
-                            android:ellipsize="end"
-                            android:singleLine="true" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <!-- Play/Pause Button -->
@@ -161,26 +167,32 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
+                        android:contentDescription="Play/Pause"
                         android:padding="5dp"
                         android:src="@drawable/play_player"
-                        android:contentDescription="Play/Pause" />
-                </LinearLayout>
+                        android:layout_marginRight="@dimen/dp_10"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/miniProgressBar"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="407dp"
+                        android:layout_height="3dp"
+                        android:layout_marginBottom="1dp"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressTint="@color/yellow"
+                        android:secondaryProgressTint="@color/gray"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <!-- Horizontal Progress Bar -->
-                <ProgressBar
-                    android:id="@+id/miniProgressBar"
-                    style="@android:style/Widget.ProgressBar.Horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_1"
-                    android:layout_marginStart="@dimen/dp_4"
-                    android:layout_marginEnd="@dimen/dp_4"
-                    android:layout_marginTop="@dimen/dp_4"
-                    android:progress="0"
-                    android:layout_gravity="bottom"
-                    android:max="100"
-                    android:progressTint="@color/yellow"
-                    android:secondaryProgressTint="@color/gray"
-                    android:indeterminate="false"/>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

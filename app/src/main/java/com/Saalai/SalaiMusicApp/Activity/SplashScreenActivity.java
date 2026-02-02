@@ -46,7 +46,8 @@ import retrofit2.Response;
 
 
 //Firebase-Saalaiphoneapp
-//2026 Thirai
+//2026 Aruvi Music app
+
 public class SplashScreenActivity extends AppCompatActivity {
 
     private static final int MIN_SPLASH_DURATION = 5000; // Minimum 2 seconds

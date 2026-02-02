@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Thirai</string>
+    <string name="app_name">Aruvi</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
